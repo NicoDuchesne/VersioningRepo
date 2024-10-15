@@ -5,13 +5,8 @@ using UnityEngine.Rendering;
 
 public class PlayerRotation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject playerTop;
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 mousePosition = Input.mousePosition;
@@ -22,6 +17,6 @@ public class PlayerRotation : MonoBehaviour
             mousePosition.y - transform.position.y
         );
 
-        transform.up = direction;
+        playerTop.transform.up = direction;
     }
 }
