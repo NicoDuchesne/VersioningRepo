@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 753032078}
   - component: {fileID: 753032081}
   - component: {fileID: 753032082}
+  - component: {fileID: 753032083}
   m_Layer: 0
   m_Name: haut
   m_TagString: Untagged
@@ -541,6 +542,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &753032083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753032076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b50fb0dd4cbcb4bac39ed83df103ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 753032081}
+  meleeSpeed: 0.5
 --- !u!1 &1557737293
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +567,7 @@ GameObject:
   - component: {fileID: 1557737294}
   - component: {fileID: 1557737296}
   - component: {fileID: 1557737295}
+  - component: {fileID: 1557737297}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -671,6 +687,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1557737297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557737293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0193721a73369b34fa52185f797f8605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1836011075
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +712,7 @@ GameObject:
   - component: {fileID: 1836011078}
   - component: {fileID: 1836011077}
   - component: {fileID: 1836011076}
+  - component: {fileID: 1836011080}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: ENEMY
@@ -733,7 +763,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836011075}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -819,6 +849,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1836011080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836011075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969e143aa5d209646aa366585fb1baa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteDeath: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  forceKnockback: 10
+  forceKnockbackTime: 0.1
+  playerTop: {fileID: 753032077}
 --- !u!1 &2041211321
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +942,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -907,7 +953,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
