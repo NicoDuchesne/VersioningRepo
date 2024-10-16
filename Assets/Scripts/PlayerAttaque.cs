@@ -6,7 +6,6 @@ public class PlayerAttaque : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private float meleeSpeed;
-    [SerializeField] private float damage;
     float timeBtwAttack;
     private void Update()
     {
