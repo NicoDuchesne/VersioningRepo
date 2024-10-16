@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyTakeDamage : MonoBehaviour
@@ -14,6 +15,7 @@ public class EnemyTakeDamage : MonoBehaviour
     [SerializeField] private Transform playerTop;
     private float distanceX;
     private float distanceY;
+    [SerializeField] private GameObject bloofSplash;
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class EnemyTakeDamage : MonoBehaviour
             spriteRenderer.sprite = spriteDeath;
 
             colliderEnemy.enabled = false;
+            Instantiate(bloofSplash, transform.position, Quaternion.identity);
         }
         distanceX = playerTop.position.x - transform.position.x;
         distanceY = playerTop.position.y - transform.position.y;
@@ -41,5 +44,9 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(forceKnockbackTime);
         enemyRb.velocity = Vector2.zero;
+        if (health <= 0)
+        {
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
     }
 }
