@@ -122,6 +122,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &92255585
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1175119043967084067, guid: 4c3013114dc63364a9f073f9eb385b9c, type: 3}
+      propertyPath: speed
+      value: 1.1
+      objectReference: {fileID: 0}
 --- !u!1 &402915096
 GameObject:
   m_ObjectHideFlags: 0
