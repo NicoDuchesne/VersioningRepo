@@ -23,13 +23,4 @@ public class PlayerAttaque : MonoBehaviour
             timeBtwAttack -= Time.deltaTime;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("ENEMY"))
-        {
-            //collision.GetComponent<Enemy>().TakeDamage(damage);
-            Debug.Log("Enemy Hit");
-        }
-    }
 }
