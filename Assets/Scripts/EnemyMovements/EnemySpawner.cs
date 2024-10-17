@@ -5,39 +5,37 @@ using UnityEngine.UIElements;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField]  private GameObject[] enemyPrefab;
+    [SerializeField] private GameObject enemyBasic;
+    [SerializeField] private GameObject enemyShield;
+    [SerializeField] private GameObject enemyDistance;
 
 
-    void Start()
+    public void SpawnEnnemy(string type, float speed)
     {
-        
-    }
+        type = type.ToLower();
 
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            SpawnEnnemy("Basic");
-        }
-    }
-
-    private void SpawnEnnemy(string type)
-    {
         switch (type)
         {
-            case "Basic":
-                GameObject enemyBasic = Instantiate(enemyPrefab[0], transform.position, Quaternion.identity);
+            case "basic":
+                GameObject newEnemyBasic = Instantiate(enemyBasic, transform.position, Quaternion.identity);
+                newEnemyBasic.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = speed;
                 break;
 
-            case "Shield":
-                GameObject enemyShield = Instantiate(enemyPrefab[1], transform.position, Quaternion.identity);
+            case "shield":
+                GameObject newEnemyShield = Instantiate(enemyShield, transform.position, Quaternion.identity);
+                newEnemyShield.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = speed;
                 break;
 
-            case "Distance":
-                GameObject enemyDistance = Instantiate(enemyPrefab[2], transform.position, Quaternion.identity);
+            case "distance":
+                GameObject newEnemyDistance = Instantiate(enemyDistance, transform.position, Quaternion.identity);
+                newEnemyDistance.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = speed;
+                break;
+            default:
+                Debug.Log("Erreur dans la database de la wave");
                 break;
         }
+
+
         
     }
 }

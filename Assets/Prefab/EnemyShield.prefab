@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4252273510099092441}
   - component: {fileID: 5523998529437903874}
   m_Layer: 0
-  m_Name: EnemyBasic
+  m_Name: EnemyShield
   m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.79622644, g: 0.14872903, b: 0.14872903, a: 1}
+  m_Color: {r: 0.17648834, g: 0.3773585, b: 0.12993948, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

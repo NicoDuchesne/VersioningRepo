@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class EnemyTakeDamage : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         colliderEnemy = GetComponent<CircleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        playerTop = GameObject.Find("haut").transform;
     }
 
     public void TakeDamage(int damage)
@@ -30,6 +32,12 @@ public class EnemyTakeDamage : MonoBehaviour
         if (health <= 0)
         {
             spriteRenderer.sprite = spriteDeath;
+
+            //Tests
+            //rb.bodyType = RigidbodyType2D.Kinematic;
+            GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<EnemyNav>().enabled = false;
+            GetComponent<EnemyTakeDamage>().enabled = false;
 
             colliderEnemy.enabled = false;
             Instantiate(bloofSplash, transform.position, Quaternion.identity);
@@ -46,7 +54,7 @@ public class EnemyTakeDamage : MonoBehaviour
         enemyRb.velocity = Vector2.zero;
         if (health <= 0)
         {
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.bodyType = RigidbodyType2D.Static;
         }
     }
 }
