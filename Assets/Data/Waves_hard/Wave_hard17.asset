@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71f46b941ca3d64d8d1ef4900a62ab0, type: 3}
   m_Name: Wave_hard17
   m_EditorClassIdentifier: 
-  level: 0
+  level: 3
   SpawnNorth:
-    enemies: []
+    enemies:
+    - shield
   SpawnEast:
-    enemies: []
+    enemies:
+    - basic
   SpawnSouth:
-    enemies: []
+    enemies:
+    - shield
   SpawnWest:
-    enemies: []
+    enemies:
+    - shield
+    - shield
