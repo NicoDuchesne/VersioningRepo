@@ -8,7 +8,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private GameObject RoomContainer;
     private int previusRandomRoom = 0;
 
-    private void Start()
+    private void Awake()
     {
         rooms = new GameObject[RoomContainer.transform.childCount];
         for (int i = 0; i < RoomContainer.transform.childCount; i++)
