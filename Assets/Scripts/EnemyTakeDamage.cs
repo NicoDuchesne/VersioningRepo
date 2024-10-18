@@ -18,7 +18,12 @@ public class EnemyTakeDamage : MonoBehaviour
     private float distanceX;
     private float distanceY;
     [SerializeField] private GameObject bloofSplash;
+    private EnemiesManager enemiesManager;
 
+    private void Awake()
+    {
+        enemiesManager = GameObject.Find("EnemiesManager").GetComponent<EnemiesManager>();
+    }
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -49,6 +54,7 @@ public class EnemyTakeDamage : MonoBehaviour
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<EnemyNav>().enabled = false;
             GetComponent<EnemyTakeDamage>().enabled = false;
+            gameObject.tag = "dead";
 
             colliderEnemy.enabled = false;
             Instantiate(bloofSplash, transform.position, Quaternion.identity);
@@ -57,6 +63,7 @@ public class EnemyTakeDamage : MonoBehaviour
         distanceY = playerTop.position.y - transform.position.y;
         rb.AddForce(new Vector2(-distanceX * forceKnockback, -distanceY * forceKnockback), ForceMode2D.Impulse);
         StartCoroutine(KnockbackTime(rb));
+        enemiesManager.CheckAreAllEnmiesDead();
     }
 
     private IEnumerator KnockbackTime(Rigidbody2D enemyRb)
@@ -67,5 +74,6 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Static;
         }
+       
     }
 }
