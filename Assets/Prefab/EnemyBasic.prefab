@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3636090527048273280}
   - component: {fileID: 4252273510099092441}
   - component: {fileID: 5523998529437903874}
+  - component: {fileID: 4887851945808506287}
   m_Layer: 0
   m_Name: EnemyBasic
   m_TagString: ENEMY
@@ -200,7 +201,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   spriteDeath: {fileID: -170036037, guid: 9d1325751eebb37438f9c8e741ce6110, type: 3}
+  spriteBasic: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   forceKnockback: 10
   forceKnockbackTime: 0.1
   playerTop: {fileID: 0}
   bloofSplash: {fileID: 2769834119364388669, guid: f6d92d9ce66f1874da08f597edb38315, type: 3}
+--- !u!114 &4887851945808506287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803730367457577715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f6caf962c53d74495e6a9fac19582e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  anim: {fileID: 0}
