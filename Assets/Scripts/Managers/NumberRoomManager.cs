@@ -7,7 +7,7 @@ public class NumberRoomManager : MonoBehaviour
 {
     public static NumberRoomManager instance;
 
-    [SerializeField] private int numberRoom;
+    public int numberRoom;
 
     void Awake()
     {
