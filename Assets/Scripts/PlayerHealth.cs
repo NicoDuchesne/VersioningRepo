@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int health;
+    public int health;
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject bloofSplash;
     private CircleCollider2D colliderPlayer;
@@ -36,6 +37,6 @@ public class PlayerHealth : MonoBehaviour
         gameObject.GetComponentInChildren<PlayerAttaque>().enabled = false;
         rb.velocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static;
-        //anim.SetTrigger("Death"); déclencehr l'animation de mort une fois
+        //anim.SetTrigger("Death"); dï¿½clencehr l'animation de mort une fois
     }
 }
