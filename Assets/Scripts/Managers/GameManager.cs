@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         currentRoom.text = "Room: " + numberRoomManager.numberRoom;
         nbRoomDeathText.text = "Room: " + numberRoomManager.numberRoom;
         roomManager.ChooseRandomRoom();
-        StartCoroutine(StartSpawnEnemies(level));
+        StartSpawnEnemies(level);
     }
 
     void Update()
@@ -63,9 +63,9 @@ public class GameManager : MonoBehaviour
         //StartCoroutine(StartGame(currentSceneName));
     }
 
-    IEnumerator StartSpawnEnemies(int level)
+    public void  StartSpawnEnemies(int level)
     {
-        yield return new WaitForSeconds(5);
+        //yield return new WaitForSeconds(2);
         spawnerManager.LaunchWave(level);
     }
 }

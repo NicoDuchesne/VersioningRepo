@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 803730367457577715}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.81, y: -1.99, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.79622644, g: 0.14872903, b: 0.14872903, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 57712037d3054f04ba12898d0d23ed2c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,9 +157,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.004919231, y: 0.046785474}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.44022393
 --- !u!50 &4252273510099092441
 Rigidbody2D:
   serializedVersion: 4
@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  spriteDeath: {fileID: -170036037, guid: 9d1325751eebb37438f9c8e741ce6110, type: 3}
-  spriteBasic: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  spriteDeath: {fileID: 21300000, guid: 103dea8c3bb99e04fa7504c8c6e0f4a8, type: 3}
+  spriteBasic: {fileID: 21300000, guid: 57712037d3054f04ba12898d0d23ed2c, type: 3}
   forceKnockback: 10
   forceKnockbackTime: 0.1
   playerTop: {fileID: 0}
