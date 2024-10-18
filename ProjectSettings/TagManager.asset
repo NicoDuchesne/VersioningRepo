@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ENEMY
   - Obstacle
+  - Semi_obstacle
   layers:
   - Default
   - TransparentFX
