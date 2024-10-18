@@ -5,25 +5,38 @@ using UnityEngine.UIElements;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField]  private GameObject enemyPrefab;
+    [SerializeField] private GameObject enemyBasic;
+    [SerializeField] private GameObject enemyShield;
+    [SerializeField] private GameObject enemyDistance;
 
 
-    void Start()
+    public void SpawnEnnemy(string type, float speed, float speedBullet)
     {
-        
-    }
+        type = type.ToLower();
 
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
+        switch (type)
         {
-            SpawnEnnemy(enemyPrefab);
-        }
-    }
+            case "basic":
+                GameObject newEnemyBasic = Instantiate(enemyBasic, transform.position, Quaternion.identity);
+                newEnemyBasic.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = speed;
+                break;
 
-    private void SpawnEnnemy(GameObject enemyPrefab)
-    {
-        GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            case "shield":
+                GameObject newEnemyShield = Instantiate(enemyShield, transform.position, Quaternion.identity);
+                newEnemyShield.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = speed;
+                break;
+
+            case "distance":
+                GameObject newEnemyDistance = Instantiate(enemyDistance, transform.position, Quaternion.identity);
+                newEnemyDistance.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = speed;
+                newEnemyDistance.GetComponent<EnemyShooting>().speedBullet = speedBullet;
+                break;
+            default:
+                Debug.Log("Erreur dans la database de la wave");
+                break;
+        }
+
+
+        
     }
 }
