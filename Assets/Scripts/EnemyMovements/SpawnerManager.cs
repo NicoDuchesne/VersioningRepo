@@ -24,7 +24,7 @@ public class SpawnerManager : MonoBehaviour
 
     }
 
-    private void LaunchWave(int level)
+    public void LaunchWave(int level)
     {
         bool foundDB = false;
         SpawnDatabase SpawnDB;
