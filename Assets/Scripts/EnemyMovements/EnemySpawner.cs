@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject enemyDistance;
 
 
-    public void SpawnEnnemy(string type, float speed)
+    public void SpawnEnnemy(string type, float speed, float speedBullet)
     {
         type = type.ToLower();
 
@@ -29,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
             case "distance":
                 GameObject newEnemyDistance = Instantiate(enemyDistance, transform.position, Quaternion.identity);
                 newEnemyDistance.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = speed;
+                newEnemyDistance.GetComponent<EnemyShooting>().speedBullet = speedBullet;
                 break;
             default:
                 Debug.Log("Erreur dans la database de la wave");
