@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   spriteDeath: {fileID: -170036037, guid: 9d1325751eebb37438f9c8e741ce6110, type: 3}
+  spriteBasic: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   forceKnockback: 10
   forceKnockbackTime: 0.1
   playerTop: {fileID: 0}
@@ -218,3 +219,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  anim: {fileID: 0}

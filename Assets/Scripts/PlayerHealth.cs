@@ -22,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             PlayDeath();
-            
         }
     }
 
@@ -32,6 +31,8 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player est mort");
         gameObject.GetComponent<PlayerControl>().enabled = false;
         gameObject.GetComponent<PlayerRotation>().enabled = false;
+        gameObject.GetComponentInChildren<PlayerBottomRotation>().enabled = false;
+        gameObject.GetComponentInChildren<PlayerAttaque>().enabled = false;
         //anim.SetTrigger("Death"); déclencehr l'animation de mort une fois
     }
 }

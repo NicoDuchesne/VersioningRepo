@@ -103,7 +103,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 5
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -200,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   spriteDeath: {fileID: -170036037, guid: 9d1325751eebb37438f9c8e741ce6110, type: 3}
+  spriteBasic: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   forceKnockback: 10
   forceKnockbackTime: 0.1
   playerTop: {fileID: 0}

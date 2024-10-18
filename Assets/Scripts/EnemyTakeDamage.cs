@@ -9,6 +9,7 @@ public class EnemyTakeDamage : MonoBehaviour
     [SerializeField] private int health;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite spriteDeath;
+    [SerializeField] private Sprite spriteBasic;
     private CircleCollider2D colliderEnemy;
     private Rigidbody2D rb;
     [SerializeField] private float forceKnockback;
@@ -29,6 +30,11 @@ public class EnemyTakeDamage : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        if (health == 1 && gameObject.name.Substring(0, 11) == "EnemyShield")
+        {
+            spriteRenderer.sprite = spriteBasic;
+        }
+
         if (health <= 0)
         {
             spriteRenderer.sprite = spriteDeath;
