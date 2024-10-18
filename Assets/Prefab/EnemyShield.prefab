@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3636090527048273280}
   - component: {fileID: 4252273510099092441}
   - component: {fileID: 5523998529437903874}
+  - component: {fileID: 2895024967646329563}
   m_Layer: 0
   m_Name: EnemyShield
   m_TagString: ENEMY
@@ -204,3 +205,16 @@ MonoBehaviour:
   forceKnockbackTime: 0.1
   playerTop: {fileID: 0}
   bloofSplash: {fileID: 2769834119364388669, guid: f6d92d9ce66f1874da08f597edb38315, type: 3}
+--- !u!114 &2895024967646329563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803730367457577715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f6caf962c53d74495e6a9fac19582e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
