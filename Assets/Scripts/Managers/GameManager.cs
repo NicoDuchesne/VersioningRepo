@@ -11,16 +11,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
         numberRoomManager = NumberRoomManager.instance;
         numberRoomManager.SetNumberRoom();
         roomManager.ChooseRandomRoom();
-        StartCoroutine(StartGame(currentSceneName));
     }
 
     IEnumerator StartGame(string currentSceneName)
     {
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(currentSceneName);   
+    }
+
+    public void NextRoom()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        StartCoroutine(StartGame(currentSceneName));
     }
 }
