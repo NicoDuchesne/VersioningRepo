@@ -28,4 +28,9 @@ public class NumberRoomManager : MonoBehaviour
         Debug.Log("Number of rooms: " + numberRoom);
     }
 
+    public void ResetNumberRoom()
+    {
+        numberRoom = 0;
+    }
+
 }
