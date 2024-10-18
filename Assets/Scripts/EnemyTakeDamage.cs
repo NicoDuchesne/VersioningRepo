@@ -39,8 +39,13 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             spriteRenderer.sprite = spriteDeath;
 
-            //Tests
-            //rb.bodyType = RigidbodyType2D.Kinematic;
+            if (gameObject.name.Substring(0, 13) == "EnemyDistance")
+            {
+                GetComponent<EnemyShooting>().enabled = false;
+            } else
+            {
+                GetComponent<EnemyDealDamage>().enabled = false;
+            }
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<EnemyNav>().enabled = false;
             GetComponent<EnemyTakeDamage>().enabled = false;

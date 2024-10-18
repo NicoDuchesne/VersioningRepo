@@ -11,6 +11,7 @@ public class SpawnerManager : MonoBehaviour
 
     [SerializeField] private SpawnDatabase[] SpawnDatabase;
     [SerializeField] private float[] speedByLevel;
+    [SerializeField] private float[] bulletSpeedByLevel;
     private float speed;
 
 
@@ -35,26 +36,26 @@ public class SpawnerManager : MonoBehaviour
                 foundDB = true;
         } while (!foundDB);
 
-        spawnWave(SpawnDB, speedByLevel[level-1]);
+        spawnWave(SpawnDB, speedByLevel[level-1], bulletSpeedByLevel[level - 1]);
     }
 
-    private void spawnWave(SpawnDatabase SpawnDB, float speed)
+    private void spawnWave(SpawnDatabase SpawnDB, float speed, float speedBullet)
     {
         foreach(string enemy in SpawnDB.SpawnNorth.enemies)
         {
-            SpawnerNorth.SpawnEnnemy(enemy, speed);
+            SpawnerNorth.SpawnEnnemy(enemy, speed, speedBullet);
         }
         foreach (string enemy in SpawnDB.SpawnEast.enemies)
         {
-            SpawnerEast.SpawnEnnemy(enemy, speed);
+            SpawnerEast.SpawnEnnemy(enemy, speed, speedBullet);
         }
         foreach (string enemy in SpawnDB.SpawnSouth.enemies)
         {
-            SpawnerSouth.SpawnEnnemy(enemy, speed);
+            SpawnerSouth.SpawnEnnemy(enemy, speed, speedBullet);
         }
         foreach (string enemy in SpawnDB.SpawnWest.enemies)
         {
-            SpawnerWest.SpawnEnnemy(enemy, speed);
+            SpawnerWest.SpawnEnnemy(enemy, speed, speedBullet);
         }
     }
 

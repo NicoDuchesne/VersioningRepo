@@ -575,6 +575,10 @@ MonoBehaviour:
   - 1
   - 2
   - 3
+  bulletSpeedByLevel:
+  - 2
+  - 3
+  - 4
 --- !u!4 &1016650546
 Transform:
   m_ObjectHideFlags: 0
@@ -662,7 +666,7 @@ GameObject:
   - component: {fileID: 1625067635}
   m_Layer: 0
   m_Name: TilemapTest
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
