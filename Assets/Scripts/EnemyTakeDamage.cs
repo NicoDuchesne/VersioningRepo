@@ -55,6 +55,7 @@ public class EnemyTakeDamage : MonoBehaviour
             GetComponent<EnemyNav>().enabled = false;
             GetComponent<EnemyTakeDamage>().enabled = false;
             gameObject.tag = "dead";
+            Debug.Log("Enemy est mort");
 
             colliderEnemy.enabled = false;
             Instantiate(bloofSplash, transform.position, Quaternion.identity);
