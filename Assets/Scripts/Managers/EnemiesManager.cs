@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
@@ -12,9 +13,11 @@ public class EnemiesManager : MonoBehaviour
     }
     public void CheckAreAllEnmiesDead()
     {
-        if(GameObject.FindGameObjectsWithTag("ENEMY") == null)
+        GameObject[] ntm = GameObject.FindGameObjectsWithTag("ENEMY");
+        if(GameObject.FindGameObjectsWithTag("ENEMY").Length == 0)
         {
-            AreAllEnmiesDead = true;
-        } 
+            AreAllEnmiesDead = true; 
+            Debug.Log("All enemies are dead");
+        }
     }
 }
