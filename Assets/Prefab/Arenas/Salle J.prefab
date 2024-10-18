@@ -5793,6 +5793,7 @@ GameObject:
   - component: {fileID: 6440782015438633741}
   - component: {fileID: 97996795537949083}
   - component: {fileID: 3461936954720299406}
+  - component: {fileID: 5572780871125269351}
   m_Layer: 0
   m_Name: Pics
   m_TagString: Untagged
@@ -6142,6 +6143,18 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &5572780871125269351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713610406602021453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6810edfa142d193489f4cb7334d7d33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4611594630432848699
 GameObject:
   m_ObjectHideFlags: 0
