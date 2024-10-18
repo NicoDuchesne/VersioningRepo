@@ -5,6 +5,12 @@ using UnityEngine;
 public class SceneManagerGame : MonoBehaviour
 {
     [SerializeField] private NumberRoomManager numberRoomManager;
+
+    private void Awake()
+    {
+        numberRoomManager = NumberRoomManager.instance;
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -12,7 +18,7 @@ public class SceneManagerGame : MonoBehaviour
 
     public void StartGame()
     {
-        numberRoomManager.ResetNumberRoom();
+        Destroy(numberRoomManager);
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 

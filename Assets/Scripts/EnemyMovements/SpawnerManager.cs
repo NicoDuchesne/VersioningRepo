@@ -13,17 +13,6 @@ public class SpawnerManager : MonoBehaviour
     [SerializeField] private float[] speedByLevel;
     [SerializeField] private float[] bulletSpeedByLevel;
     private float speed;
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            LaunchWave(3);
-        }
-
-    }
-
     public void LaunchWave(int level)
     {
         bool foundDB = false;
@@ -35,27 +24,30 @@ public class SpawnerManager : MonoBehaviour
             if (SpawnDB.level == level)
                 foundDB = true;
         } while (!foundDB);
-
-        spawnWave(SpawnDB, speedByLevel[level-1], bulletSpeedByLevel[level - 1]);
+        StartCoroutine(spawnWave(SpawnDB, speedByLevel[level - 1], bulletSpeedByLevel[level - 1]));
     }
 
-    private void spawnWave(SpawnDatabase SpawnDB, float speed, float speedBullet)
+    IEnumerator spawnWave(SpawnDatabase SpawnDB, float speed, float speedBullet)
     {
         foreach(string enemy in SpawnDB.SpawnNorth.enemies)
         {
             SpawnerNorth.SpawnEnnemy(enemy, speed, speedBullet);
+            yield return new WaitForSeconds(0.5f);
         }
         foreach (string enemy in SpawnDB.SpawnEast.enemies)
         {
             SpawnerEast.SpawnEnnemy(enemy, speed, speedBullet);
+            yield return new WaitForSeconds(0.5f);
         }
         foreach (string enemy in SpawnDB.SpawnSouth.enemies)
         {
             SpawnerSouth.SpawnEnnemy(enemy, speed, speedBullet);
+            yield return new WaitForSeconds(0.5f);
         }
         foreach (string enemy in SpawnDB.SpawnWest.enemies)
         {
             SpawnerWest.SpawnEnnemy(enemy, speed, speedBullet);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 

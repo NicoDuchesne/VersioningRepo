@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         }
         if (enemiesManager.AreAllEnmiesDead)
         {
-            NextRoom();
+            StartCoroutine(NextRoom());
             Debug.Log("Next Room");
         }
     }
@@ -56,16 +56,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(currentSceneName);   
     }
 
-    public void NextRoom()
+    IEnumerator NextRoom()
     {
+        yield return new WaitForSeconds(1.5f);
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
-        //StartCoroutine(StartGame(currentSceneName));
     }
 
     public void  StartSpawnEnemies(int level)
     {
-        //yield return new WaitForSeconds(2);
+        
         spawnerManager.LaunchWave(level);
     }
 }
