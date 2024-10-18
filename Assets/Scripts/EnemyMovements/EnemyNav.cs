@@ -33,7 +33,7 @@ public class EnemyNav : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 direction = (target.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
         rb.rotation = angle;
     }
 }
