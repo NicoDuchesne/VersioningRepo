@@ -6,8 +6,11 @@ TagManager:
   tags:
   - ENEMY
   - Obstacle
+<<<<<<< HEAD
   - Semi_obstacle
+=======
   - dead
+>>>>>>> Nico
   layers:
   - Default
   - TransparentFX
